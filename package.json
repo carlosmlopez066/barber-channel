@@ -1,0 +1,26 @@
+{
+  "name": "barber-channel",
+  "version": "1.0.0",
+  "description": "Barber Page",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/carlosmlopez066/barber-channel.git"
+  },
+  "keywords": [
+    "API",
+    "JavaScript"
+  ],
+  "author": "Carlos Lopez <carlosmlopez066@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/carlosmlopez066/barber-channel/issues"
+  },
+  "homepage": "https://github.com/carlosmlopez066/barber-channel#readme",
+  "dependencies": {
+    "axios": "^1.1.3"
+  }
+}
