@@ -1,5 +1,9 @@
 //API
-const API = 'https://youtube-v31.p.rapidapi.com/search?channelId=UCtq2iGjr4uVM2tKabt9xFQw&part=snippet%2Cid&order=date&maxResults=10';
+
+let jhonStyleID = 'UCtq2iGjr4uVM2tKabt9xFQw'
+let chemote = 'UCZM2l75eurWvNeOG_iF0JSQ'
+const API_jhonStyle = `https://youtube-v31.p.rapidapi.com/search?channelId=${jhonStyleID}&part=snippet%2Cid&order=date&maxResults=10`;
+const API_chemote = 'https://youtube-v31.p.rapidapi.com/search?channelId=UCZM2l75eurWvNeOG_iF0JSQ&part=snippet%2Cid&order=date&maxResults=10';
 const options = {
     method: 'GET',
     headers: {
@@ -12,13 +16,16 @@ const main = document.querySelector('#main');
 
 
 //Get Data
-async function getData() {
-    const res = await fetch(API, options);
+async function getData(urlAPI) {
+    const res = await fetch(urlAPI, options);
     const data = await res.json();
     return data;
 
 }
 async function getVideos(urlAPI) {
+
+
+
     try {
         const videos = await getData(urlAPI);
         console.log(videos)
@@ -33,11 +40,35 @@ async function getVideos(urlAPI) {
     </div>
     `)} 
     `;
-        main.innerHTML = '';
+        if (main !== '') {
+            main.innerHTML = '';
+
+        }
+
         main.innerHTML = view;
     } catch (error) {
         console.log(error);
     }
 };
-getVideos(API)
+//getVideos(API_jhonStyle)
+getVideos(API_jhonStyle)
+
+//fetching more Data
+const jhonStyle = document.querySelector('#jhonStyle');
+jhonStyle.addEventListener('click', changeAPI2)
+
+const chemotee = document.querySelector('#chemote');
+chemotee.addEventListener('click', changeAPI)
+
+function changeAPI() {
+    console.log('hola')
+    getVideos(API_chemote)
+}
+function changeAPI2() {
+    console.log('hola')
+    getVideos(API_jhonStyle)
+}
+
+
+
 
