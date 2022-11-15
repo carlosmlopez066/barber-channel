@@ -1,4 +1,5 @@
 :root {
+    --black: #000000;
     --dark-grey: #1D1D1D;
     --white: #FFFFFF;
     --red: #940000;
@@ -76,7 +77,15 @@ main {
     border-radius: 1rem;
 }
 
+.main-photo-video img {
+    width: 30rem;
+    height: 19rem;
+    border-radius: 1rem;
+    box-shadow: -2px 3px 8px var(--black)
+}
+
 .main-title-video {
+    width: 30rem;
     color: var(--white);
     margin-bottom: 2rem;
     font-size: 1.5rem;
